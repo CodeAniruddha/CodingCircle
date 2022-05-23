@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Rock Paper Scissor </title>
+    <link rel="stylesheet" href="style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="text-boxes">
+    <div class="text-box HTMLBox">
+      <div class="topic">Python Code:</div>
+      <textarea id="HTMLBox" readonly >
+        import random 
+
+        all_choice=["Rock","Paper","Scissor"]
+        
+        while True:
+            print("Rock Paper Scissor Game")
+            print("Made by Aniruddha Avinash Ade")
+            youwin,compwin=0,0
+        
+            for i in range(1,6):
+                print("Round",i,"Start:")
+                print("Please select any option:")
+                print("Rock","Paper","Scissor",sep="\n")
+                mychoice=int(input())
+                if mychoice==1:
+                    print("You select Rock")
+                    mychoice="Rock"
+                elif mychoice==2:
+                    print("You select Paper")
+                    mychoice="Paper"
+                elif mychoice==3:
+                    print("You select Scissor")
+                    mychoice="Scissor"
+                else:
+                    print("Invalid choice")
+        
+                    break
+                compchoice=random.choice(all_choice)
+                print("Computer Select:",compchoice)
+                if mychoice==compchoice:
+                    youwin+=1
+                    compwin+=1
+                    print("This Round is Tie")
+                elif (mychoice=="Paper" and compchoice=="Rock") or (mychoice=="Rock" and compchoice=="Scissor") or (mychoice=="Scissor" and compchoice=="Paper"):
+                    youwin+=1
+                    print("You win this Round")
+                else:
+                    compwin+=1
+                    print("Computer win this Round . You lose")
+        
+            if youwin>compwin:
+                print("You win the game")
+                print("Score:" "Your score:",youwin,"Computer score:",compwin)
+            
+            elif compwin>youwin:
+                print("Computer win the Game")
+                print("Score:" "Your score:",youwin,"Computer score:",compwin)
+            
+            else:
+                print("Match drawn")
+        
+            user_choice=input("Do you want to play again(Yes/Exit)")
+            if user_choice=='Yes' or user_choice=='YES' or user_choice=='yes':
+        
+                continue
+            else:
+                break
+      </textarea>
+      <button id="HTMLButton">Copy Codes</button>
+    </div>
+
+
+  <script>
+  // HTML BOx JS Code
+    let HTMLBox = document.getElementById("HTMLBox");
+    let HTMLButton = document.getElementById("HTMLButton");
+
+    HTMLButton.onclick = function() {
+      HTMLBox.select();
+      document.execCommand("copy");
+      HTMLButton.innerText = "Codes Copied"
+    }
+
+    // CSS Box Js Code
+      let CSSBox = document.getElementById("CSSBox");
+      let CSSButton = document.getElementById("CSSButton");
+
+      CSSButton.onclick = function() {
+        CSSBox.select();
+        document.execCommand("copy");
+        CSSButton.innerText = "Codes Copied"
+      }
+    // JavaScript BOx JS Code
+      let JSBox = document.getElementById("JSBox");
+      let JSButton = document.getElementById("JSButton");
+
+      JSButton.onclick = function() {
+        JSBox.select();
+        document.execCommand("copy");
+        JSButton.innerText = "Codes Copied"
+      }
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Guess the number</title>
+    <link rel="stylesheet" href="style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="text-boxes">
+    <div class="text-box HTMLBox">
+      <div class="topic">Python Code:</div>
+      <textarea id="HTMLBox" readonly >
+import random
+number=random.randint(1,100)
+myguess=None
+guesses=0
+while (myguess != number):
+    myguess=int(input("Enter your guess number:"))
+    guesses+=1
+    if myguess==number:
+        print("You guess it correct!")
+    else:
+        if myguess>number:
+            print("You guess it wrong ! Enter a smaller number:")
+        else:
+            print("You guess it wrong ! Enter a greater number:")
+print("You guesses the number in",guesses,"guesses")
+      </textarea>
+      <button id="HTMLButton">Copy Codes</button>
+    </div>
+
+
+  <script>
+  // HTML BOx JS Code
+    let HTMLBox = document.getElementById("HTMLBox");
+    let HTMLButton = document.getElementById("HTMLButton");
+
+    HTMLButton.onclick = function() {
+      HTMLBox.select();
+      document.execCommand("copy");
+      HTMLButton.innerText = "Codes Copied"
+    }
+
+    // CSS Box Js Code
+      let CSSBox = document.getElementById("CSSBox");
+      let CSSButton = document.getElementById("CSSButton");
+
+      CSSButton.onclick = function() {
+        CSSBox.select();
+        document.execCommand("copy");
+        CSSButton.innerText = "Codes Copied"
+      }
+    // JavaScript BOx JS Code
+      let JSBox = document.getElementById("JSBox");
+      let JSButton = document.getElementById("JSButton");
+
+      JSButton.onclick = function() {
+        JSBox.select();
+        document.execCommand("copy");
+        JSButton.innerText = "Codes Copied"
+      }
+  </script>
+
+
+</body>
+</html>
